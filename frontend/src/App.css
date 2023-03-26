@@ -1,0 +1,150 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+button{
+  cursor: pointer;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  line-height: 3rem;
+}
+
+.product-img{
+  height: 200px;
+  width: 300px;
+}
+
+.products-container{
+  width: 95%;
+  height: 150vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows:  repeat(6, 1fr);
+  gap: 20px;
+  margin: auto;
+}
+
+.product-div{
+  width: 500px;
+  height: 500px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+}
+.product-div:hover{
+  border: 2px solid brown;
+
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.h1-home{
+  font-size: 300%;
+  color: brown;
+  padding-top: 50px;
+}
+
+.h1-products{
+  font-size: 500%;
+  color: brown;
+  padding-top: 20px;
+  margin-bottom: 30px;
+}
+
+.slide-container{
+  width: 400px;
+  margin: auto;
+  padding-top: 50px;
+}
+
+.add-new-product{
+  height: 400px;
+  width: 200px;
+  margin: auto;
+  margin-top: 70px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.h1-new-product{
+  color: brown;
+  font-size: 400%;
+  padding-top: 50px;
+}
+
+@media (max-width:700px) {
+  .product-img{
+      height: 100px;
+      width: 100px;
+  }
+  .product-div{
+      height: 400px;
+      width: 400px;
+  }
+  .h1-products{
+      font-size: 200%;
+  }
+  .add-new-product{
+      height: 500px;
+      width: 300px;
+  }
+  .h1-new-product{
+      font-size:200%;
+  }
+  .slide-container{
+      width: 300px;
+      margin: auto;
+      padding-top: 50px;
+  }
+}
