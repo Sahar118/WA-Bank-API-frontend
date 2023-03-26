@@ -26,6 +26,7 @@ const CreateNewUser = () => {
     }
     return (
         <div className='add-new-product'>
+            <h2> Add New User</h2>
             <Form>
                 <Form.Field>
                     <label><span>  Full Name:</span></label>

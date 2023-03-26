@@ -87,8 +87,8 @@ export default function CustomizedTables() {
                             <StyledTableCell align="right">
                                 <Stack spacing={1}>
                                     <Button onClick={() => deleteUser(row._id)}>Delete</Button>
-                                    <Button>Deposit</Button>
-                                    <Button>Add Credit</Button>
+                                    {/* <Button>Deposit</Button>
+                                    <Button>Add Credit</Button> */}
 
                                 </Stack>
                             </StyledTableCell>

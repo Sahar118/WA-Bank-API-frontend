@@ -7,7 +7,7 @@ const MainNavigation = () => {
             <nav>
                 <ul className="list">
                     <li>
-                        <NavLink className={({ isActive }) => isActive ? classes.active : undefined} to='/' > All User</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? classes.active : undefined} to='/' > Home Page</NavLink>
                     </li>
 
                     <li> <NavLink className={({ isActive }) => isActive ? classes.active : undefined} to='/addNewUser'>

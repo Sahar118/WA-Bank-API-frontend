@@ -7,31 +7,34 @@ import axios from 'axios';
 
 export default function Update() {
     let navigate = useNavigate();
-    const [title, setTitle] = useState("");
-    const [price, setPrice] = useState("");
-    const [category, setCatrgory] = useState("");
-    const [image, setImage] = useState("");
-    const [ID, setID] = useState(null);
+    const [id, setID] = useState('')
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [cash, setCash] = useState('');
+    const [credit, setCredit] = useState('');
+
 
     const sendDataToAPI = () => {
-        axios.post('https://63f8a6e26978b1f9105e1064.mockapi.io/api/products', {
-            ID,
-            title,
-            price,
-            category,
-            image
+        axios.post('https://coral-kitten-kit.cyclic.app/api/v1/user', {
+            id,
+            name,
+            email,
+            phone,
+            cash,
+            credit
         }).then(() => {
-            navigate.push('/read')
+            navigate('/')
         })
-        alert('Successfully updated')
-
     }
     useEffect(() => {
-        setID(localStorage.getItem('ID'))
-        setTitle(localStorage.getItem('title'))
-        setPrice(localStorage.getItem('price'));
-        setCatrgory(localStorage.getItem('category'));
-        setImage(localStorage.getItem('image'))
+        setID(localStorage.getItem('_id'))
+        setName(localStorage.getItem('name'))
+        setEmail(localStorage.getItem('email'));
+        setPhone(localStorage.getItem('phone'));
+        setCash(localStorage.getItem('cash'))
+        setCredit(localStorage.getItem('credit'))
+
     }, [])
 
     return (
@@ -39,46 +42,54 @@ export default function Update() {
             <Form>
                 <h1> Update Items :</h1>
                 <Form.Field>
-                    <label><span>Title:</span></label>
+                    <label><span>Full Name:</span></label>
+                    <p> {name}</p>
                     <input
-                        name="title"
-                        value={title}
-                        placeholder='Title'
-                        onChange={(e) => setTitle(e.target.value)}
+                        name="name"
+                        value={name}
+                        placeholder='name'
+                        onChange={(e) => setName(e.target.value)}
                     />
                 </Form.Field>
 
                 <Form.Field>
-                    <label><span>Price:</span></label>
+                    <label><span>Email:</span></label>
                     <input
-                        name="price"
-                        value={price}
-                        placeholder='Price'
-                        onChange={(e) => setPrice(e.target.value)}
+                        name="email"
+                        value={email}
+                        placeholder='email'
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                 </Form.Field>
                 <Form.Field>
-                    <label><span>Category:</span></label>
+                    <label><span>Phone:</span></label>
                     <input
-                        name="category"
-                        value={category}
-                        placeholder='Category'
-                        onChange={(e) => setCatrgory(e.target.value)}
+                        name="phone"
+                        value={phone}
+                        placeholder='Phone'
+                        onChange={(e) => setPhone(e.target.value)}
                     />
 
                 </Form.Field>
 
                 <Form.Field>
-                    <label><span>Image:</span></label>
+                    <label><span>Cash:</span></label>
                     <input
-                        name="image"
-                        value={image}
-                        placeholder='image'
-                        onChange={(e) => setImage(e.target.value)}
-
+                        name="cash"
+                        value={cash}
+                        placeholder='cash'
+                        onChange={(e) => setCash(e.target.value)}
                     />
 
-
+                </Form.Field>
+                <Form.Field>
+                    <label><span> Credit:</span></label>
+                    <input
+                        name="credit"
+                        value={credit}
+                        placeholder=' Credit'
+                        onChange={(e) => setCredit(e.target.value)}
+                    />
                 </Form.Field>
                 <Link to='/read'>
                     <Button type='submit' onClick={sendDataToAPI}>Update</Button>
